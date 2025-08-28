@@ -57,11 +57,14 @@ override_dh_auto_install:
 	mkdir -p debian/tmp/usr/share/gocode/src/github.com/containerd \
 		&& mv .pristine-source debian/tmp/usr/share/gocode/src/github.com/containerd/containerd
 
+override_dh_installsystemd:
+	dh_installsystemd -pcontainerd-stable --name=containerd containerd.service
+
 execute_after_dh_installsystemd:
 	# replace "/usr/local/bin/containerd" with "/usr/bin/containerd" in our systemd service file
-	grep '/usr/local/bin/containerd' debian/containerd/usr/lib/systemd/system/containerd.service \
-		&& sed -i 's!/usr/local/bin/containerd!/usr/bin/containerd!g' debian/containerd/usr/lib/systemd/system/containerd.service \
-		&& ! grep '/usr/local/bin/containerd' debian/containerd/usr/lib/systemd/system/containerd.service
+	grep '/usr/local/bin/containerd' debian/containerd-stable/usr/lib/systemd/system/containerd.service \
+		&& sed -i 's!/usr/local/bin/containerd!/usr/bin/containerd!g' debian/containerd-stable/usr/lib/systemd/system/containerd.service \
+		&& ! grep '/usr/local/bin/containerd' debian/containerd-stable/usr/lib/systemd/system/containerd.service
 
 override_dh_dwz:
 	# do not call dh_dwz to avoid "dwz: Too few files for multifile optimization"

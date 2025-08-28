@@ -1,4 +1,4 @@
-Source: containerd-app
+Source: containerd-stable
 Section: admin
 Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
@@ -15,10 +15,13 @@ Homepage: https://containerd.io
 Vcs-Git: https://github.com/canonical/containerd-app.git
 Vcs-Browser: https://github.com/canonical/containerd-app
 
-Package: containerd
+Package: containerd-stable
 Architecture: linux-any
-Depends: runc, ${misc:Depends}, ${shlibs:Depends}
+Depends: runc-stable, ${misc:Depends}, ${shlibs:Depends}
 Breaks: docker.io (<< 19.03.13-0ubuntu4)
+Conflicts: containerd
+Replaces: containerd
+Provides: containerd
 Built-Using: ${misc:Built-Using}
 Description: daemon to control runC
  Containerd is a daemon to control runC, built for performance and density.
@@ -27,3 +30,7 @@ Description: daemon to control runC
  migration of containers.
  .
  This package contains the binaries.
+ .
+ This is the stable version of Containerd in Ubuntu. This package will only
+ receive updates for patch releases and security fixes. If you want to get
+ feature updates, use containerd instead.
