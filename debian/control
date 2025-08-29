@@ -12,8 +12,8 @@ Build-Depends: debhelper-compat (= 12),
                procps
 Standards-Version: 4.7.2
 Homepage: https://containerd.io
-Vcs-Git: https://github.com/canonical/containerd-app.git
-Vcs-Browser: https://github.com/canonical/containerd-app
+Vcs-Git: https://github.com/canonical/containerd-stable.git
+Vcs-Browser: https://github.com/canonical/containerd-stable
 
 Package: containerd-stable
 Architecture: linux-any
