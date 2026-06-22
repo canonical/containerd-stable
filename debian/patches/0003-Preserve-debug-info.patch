@@ -8,10 +8,8 @@ Last-Updated: 2023-06-20
  Makefile | 1 -
  1 file changed, 1 deletion(-)
 
-diff --git a/Makefile b/Makefile
-index 6a1b85c..473cbca 100644
---- a/Makefile
-+++ b/Makefile
+--- containerd-stable-2.2.2.orig/Makefile
++++ containerd-stable-2.2.2/Makefile
 @@ -65,7 +65,6 @@ else
  endif
  
