@@ -1,3 +1,9 @@
+containerd-stable (2.3.4+dfsg1-0ubuntu2) stonking; urgency=medium
+
+  * Skip additional test requiring HugeTLB controller
+
+ -- Athos Ribeiro <athos@ubuntu.com>  Fri, 21 Aug 2026 11:24:04 -0300
+
 containerd-stable (2.3.4+dfsg1-0ubuntu1) stonking; urgency=medium
 
   * d/{copyright,watch}: do not ship non-free headers
